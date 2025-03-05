@@ -6,7 +6,6 @@ PATH = "content"
 
 THEME = "pelican-themes/waterspill-en"
 
-
 TIMEZONE = 'America/Winnipeg'
 
 DEFAULT_LANG = 'English'
