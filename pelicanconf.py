@@ -4,6 +4,9 @@ SITEURL = ""
 
 PATH = "content"
 
+THEME = "pelican-themes/waterspill-en"
+
+
 TIMEZONE = 'America/Winnipeg'
 
 DEFAULT_LANG = 'English'
@@ -15,18 +18,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (
-    ("Pelican", "https://getpelican.com/"),
-    ("Python.org", "https://www.python.org/"),
-    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
-)
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("Linkedln", "https://www.linkedin.com/in/ashekazaman/"),
+    ("GitHub", "https://github.com/AshekAZaman/"),
 )
 
 DEFAULT_PAGINATION = 10

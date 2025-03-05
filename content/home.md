@@ -1,6 +1,6 @@
 ---
-title: Resume with Pelican
-date: 2025-03-05 12:48
+title: Ashek A Zaman
+date: 2025-03-05 13:48
 category: Home
 ---
 
@@ -11,4 +11,4 @@ I enjoy building efficient, user-friendly solutions and solving technical challe
 
 ---
 
-## Please click on the categories to view other components of the Resume. ##
+## Please click on one of pages to view other components of the Resume. ##
