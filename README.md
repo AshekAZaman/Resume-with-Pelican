@@ -91,8 +91,7 @@ Follow these steps to create and host your resume website.
 
 - Visit `http://localhost:8000` in your browser to preview the site.
 
-7. **Set up a GitHub repository.**
-- *Relation to Etter*: Etter recommends distributed version control systems like Git for tracking changes and collaboration.
+### 7. Set up a GitHub repository
 - Create a new repository on GitHub (e.g., "Resume-with-Pelican").
 - Use GitHub Desktop or the command line to clone it locally and commit your project files.
 
