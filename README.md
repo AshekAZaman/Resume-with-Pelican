@@ -1,150 +1,214 @@
-# Resume with Pelican – README
-
-## Statement of Purpose
-
-This README provides a step-by-step guide to creating and hosting a resume website using modern technical writing tools, as inspired by Andrew Etter’s *Modern Technical Writing*. It is intended for individuals with basic technical skills, some familiarity with Markdown, and an interest in learning about static site generators and version control. The process involves writing a resume in Markdown, generating a static site with Pelican, and deploying it to GitHub Pages, all while aligning with Etter’s principles of lightweight markup, static site generators, distributed version control, and forges.
 
 
-## Prerequisites
 
-Before following these instructions, ensure you have:
+# Resume with Pelican – README  
 
-- **Python** installed on your system. (Installation instructions: [Install Python](https://www.python.org/))
-- A basic understanding of the command line.
-- **Git** installed for version control. (Download: [Git SCM](https://git-scm.com/))
-- A GitHub account and the GitHub Desktop app (Download: [GitHub Desktop](https://desktop.github.com/download/)).
-- **Make** installed (on Windows, via Chocolatey: [Make Installation](https://stackoverflow.com/q/32127524)).
-- Familiarity with **Markdown**. (Tutorial: [Markdown Tutorial](https://www.markdowntutorial.com/))
+## Statement of Purpose  
+This guide provides a step-by-step workflow for creating a professional resume website, inspired by Andrew Etter’s *Modern Technical Writing*. Using lightweight markup, static site generators, and version control, this method keeps your resume **easy to maintain**, **collaborative**, and **always up-to-date**. It streamlines showcasing your professional identity efficiently and accessibly.
 
-## Instructions
+**Why This Matters**:  
+- **Lightweight Markup**: Writing in Markdown simplifies formatting, eliminating the need for Word or HTML. Its human-readable syntax lets you focus on content, making updates quick and easy, aligning with Etter’s advocacy for simplicity.  
+- **Static Websites**: Pelican converts your resume into fast, secure HTML files, accessible anywhere, even offline. This improves user experience and security by removing server-side processing, unlike dynamic websites.  
+- **GitHub Pages**: A free, version-controlled hosting solution that lets you update your resume by pushing changes. Following Etter’s “publish frequently” principle, it keeps your profile current with minimal effort.  
 
-Follow these steps to create and host your resume website.
 
-### 1. Install Pelican with Markdown support
+**Audience**:  
+This guide is designed for professionals exploring modern documentation methods, including:  
+- **New technical writers** eager to apply static site generators and version control to create structured, maintainable content.  
+- **Non-developers** looking for a simple way to build and update a professional resume website without prior coding experience.  
+- **Markdown learners** who want to expand their skills by using lightweight markup for clear, web-friendly formatting.
+---
 
-- Open a command prompt and run:
+## Prerequisites  
+Before building your resume, ensure you have these essential tools and skills:  
 
-    `python -m pip install "pelican[markdown]"`
+1. **Python 3.6+**  
+   - Pelican, the static site generator, runs on Python, a widely used and reliable language.  
+   - **Where to Get It**: Visit the [Python Installation Guide](https://www.python.org/) to download and set up Python.  
 
-- This installs Pelican along with Markdown support.
+2. **Git**  
+   - This version control system tracks file changes, supports collaboration, and allows reverting to previous versions.  
+   - **Where to Get It**: Download Git from [Git SCM](https://git-scm.com/) and follow the installation steps.  
 
-### 2. Install Make (Windows users)
+3. **GitHub Account**  
+   - A GitHub account enables free hosting via GitHub Pages and simplifies version control and collaboration.  
+   - **How to Start**: Sign up for a free account at [GitHub](https://github.com/).  
 
-- Install Chocolatey from [chocolatey.org](chocolatey.org), then run this in an administrator command prompt:
+4. **Make (Windows Users)**  
+   - Make automates repetitive build tasks like generating HTML files, ensuring consistency.  
+   - **Installation**: Install Make via Chocolatey by running:  
+     ```bash  
+     choco install make  
+     ```  
 
-  `choco install make`
+5. **Basic Markdown Knowledge**  
+   - Markdown is a simple markup language used for structuring resume content.  
+   - **Learn More**: Visit the [Markdown Syntax Guide](https://commonmark.org/help/) for a quick overview.
+---
 
-### 3. Create a new Pelican project
+## Instructions  
 
-- Run:
+### 1. Install Pelican with Markdown Support  
+Andrew Etter advocates for lightweight markup to simplify workflows, and this step follows that principle.  
 
-    `pelican-quickstart`
+- **Action**: Install Pelican with Markdown support by running:  
+  ```bash  
+  python -m pip install "pelican[markdown]"  
+  ```  
+  This installs Pelican and the Markdown plugin, letting you write your resume in a clean, text-based format. By avoiding complex HTML or word processors, you can focus on content,aligning with Etter’s philosophy.
 
-- Answer the prompts as follows:
-  - Where to create the website: . (current directory)
-  - Title: "Resume with Pelican"
-  - Author: Your name (e.g., "Ashek A Zaman")
-  - Default language: en
-  - URL prefix: n
-  - Article pagination: Y (default)
-  - Articles per page: 10
-  - Time zone: Your time zone (e.g., America/Winnipeg)
-  - Generate tasks.py/Makefile: Y
-  - Upload options: N for all
+### 2. Set Up Make for Build Automation (Windows)  
+Automation reduces manual effort and ensures consistency,key in modern technical writing.  
 
-- This sets up the project structure.
+- **Action**: Install Make using Chocolatey:  
+  ```bash  
+  choco install make  
+  ```  
+  **Make** automates tasks like generating HTML files, ensuring a repeatable, error-free build process that saves time as you update your resume.
 
-### 4. Write your resume in Markdown
+### 3. Initialize Your Pelican Project  
+Pelican’s quickstart tool help setup the project.  
 
-- Create a file named home.md in the content directory. Example content:
+- **Action**: Run the configuration wizard:  
+  ```bash  
+  pelican-quickstart  
+  ```  
+  - **Title**: Enter "Resume with Pelican" or a custom title.  
+  - **Author**: Input your full name (e.g., "Ashek A Zaman").  
+  - **Time Zone**: Set your region (e.g., `America/Winnipeg`).  
+  - Accept default settings unless customization is needed.  
 
-  `# Ashek A Zaman`
+This command generates essential project files, quickly preparing your resume website.
 
-  `A brief introduction about myself.`
+### 4. Write Your Resume in Markdown  
+Markdown allows you to prioritize content over formatting, making it easier to focus on your words.  
+- **Action**: Create a file named `home.md` in the `content/` folder with an introduction like this:  
+  ```markdown  
+  # Ashek A Zaman  
+  *Software Developer*  
+  Passionate about transforming complex ideas into clear, actionable insights.  
+  ```  
+- **Action**: Add detailed subsections, such as `education.md`, in the `content/pages/` directory:  
+  ```markdown  
+  # Education  
+  **University of Manitoba** – BSc Computer Science (2018–2025)  
+  - Relevant Courses: Data Structures and Algorithms, Data Structures, Technical Communication in Computer Science   
+  ```  
+You can further organize your resume by creating additional files (e.g., `experience.md` or `skills.md`), making it easier to update specific sections later.  
 
-- Add separate pages for sections like Education, Experience, Skills, and Projects in content/pages/. For example, education.md:
+### 5. Apply a Pelican Theme for Readability  
+A good theme boosts readability and professionalism, leaving a strong impression.  
+- **Action**: Clone the Pelican themes repository:  
+  ```bash  
+  git clone --recursive https://github.com/getpelican/pelican-themes ~/pelican-themes  
+  ```  
+- **Action**: Set the "waterspill-en" theme in `pelicanconf.py`:  
+  ```python  
+  THEME = "~/pelican-themes/waterspill-en"  
+  ```  
+  Replace `~` with your home directory path (e.g., `C:/Users/YourName` on Windows). The "waterspill-en" theme is clean and professional, but feel free to explore other options.
 
-  `# Education`
-  
-  `**University Name** - Degree, Years`
+### 6. Build and Preview Locally  
+Testing your site locally before going live aligns with Etter’s advice to "test before publishing," helping you catch issues early.  
+- **Action**: Build the site and launch a local server with this command:  
+  ```bash  
+  make html && make serve  
+  ```  
+  - Navigate to `http://localhost:8000` in your browser to see your resume as it will appear online. This step lets you review the layout, check for errors, and ensure everything looks polished before sharing it with the world.  
 
-### 5. Apply a theme to your site
+### 7. Deploy to GitHub Pages  
+GitHub Pages provides a free, dependable hosting solution that’s perfect for static sites like your resume.  
+- **Action**: Install `ghp-import`, a tool for deploying to GitHub Pages:  
+  ```bash  
+  python -m pip install ghp-import  
+  ```  
+- **Action**: Generate the production-ready version of your site:  
+  ```bash  
+  pelican content -s publishconf.py  
+  ```  
+- **Action**: Deploy it to GitHub with these commands:  
+  ```bash  
+  ghp-import output -b gh-pages  
+  git push origin gh-pages  
+  ```  
+  Once deployed, your resume will be accessible at:  
+  `https://yourusername.github.io/Resume-with-Pelican/`. This step not only makes your resume publicly available but also ties it to a platform that highlights your technical proficiency.  
 
-- Clone the Pelican themes repository:  
-  
-  `git clone --recursive https://github.com/getpelican/pelican-themes ~/pelican-themes`
+---
 
-- I chose the "waterspill-en" theme (demo: pelicanthemes.com/waterspill-en).
+## Troubleshooting  
 
-- Edit pelicanconf.py and set:
+### Issue 1: Theme Not Loading  
+**Cause**: The `SITEURL` in your production settings might be incorrect, causing the theme to fail.  
+**Fix**:  
+1. Open `publishconf.py` and update the `SITEURL` to match your live site:  
+   ```python  
+   SITEURL = "https://yourusername.github.io/Resume-with-Pelican"  
+   ```  
+2. Rebuild and redeploy your site to apply the changes.  
 
-    `THEME = "/path/to/~/pelican-themes/waterspill-en"`
+### Issue 2: Changes Not Reflecting Post-Deployment  
+**Cause**: This could stem from cached content or skipping a rebuild step.  
+**Fix**:  
+1. Rebuild the site to ensure all changes are included:  
+   ```bash  
+   make html  
+   ```  
+2. Redeploy to GitHub Pages:  
+   ```bash  
+   ghp-import output -b gh-pages  
+   git push origin gh-pages  
+   ```  
+3. Clear your browser cache by performing a hard refresh (Ctrl + F5).  
 
-- Replace `/path/to/` with the actual path to the theme directory
+### Issue 3: Markdown Formatting Errors  
+**Cause**: Syntax errors, such as missing headers or incorrect indentation, can disrupt your layout.  
+**Fix**:  
+- Use a tool like the [Markdown Linter](https://github.com/markdownlint/markdownlint) to check your Markdown files for mistakes and ensure proper formatting.  
 
-### 6.Build and preview your site locally
+---
 
-- This generates the site in the `output` directory.
-- Run:
+## Further Resources  
+Here are some additional references to deepen your understanding and customize your project:  
+1. **[Pelican Documentation](https://docs.getpelican.com/)**: Dive into advanced options for tweaking templates and adding plugins to enhance your site.  
+2. **[GitHub Pages Guide](https://pages.github.com/)**: Learn how to set up a custom domain or troubleshoot hosting issues.  
+3. **[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)**: A handy reference for mastering Markdown syntax quickly.  
+4. **[Python Basics](https://docs.python.org/3/tutorial/)**: Brush up on Python skills to unlock more advanced Pelican customizations.  
 
-    `make serve`
+---
 
-- Visit `http://localhost:8000` in your browser to preview the site.
+## FAQs
 
-### 7. Set up a GitHub repository
-- Create a new repository on GitHub (e.g., "Resume-with-Pelican").
-- Use GitHub Desktop or the command line to clone it locally and commit your project files.
+### Q1: Why is Markdown better than raw HTML?   
+**A**: Markdown’s simple, plain-text syntax eliminates the need for managing HTML tags, letting you focus on content.  
+- **HTML**: `<h1>Education</h1><p><strong>University of Manitoba</strong> - BSc Computer Science</p>`  
+- **Markdown**: `# Education\n**University of Manitoba** - BSc Computer Science`  
+This simplicity aligns with Andrew Etter’s principle of reducing complexity in workflows, making your resume easier to create and maintain.
 
-### 8 Deploy your site to GitHub Pages.
+### Q2: My Markdown resume updates aren’t showing in the browser. What’s wrong?  
+**A**: This issue can often be caused by:  
+1. **Cached Content**: Clear the cache with Ctrl + F5 to see the latest version.  
+2. **Missing Rebuild**: Run `make html` to regenerate your site.  
+3. **Unpublished Changes**: Push your updates to GitHub Pages with:  
+   ```bash  
+   ghp-import output -b gh-pages  
+   git push origin gh-pages  
+   ```  
+Following Etter’s advice to "publish frequently" ensures your live site reflects your most recent edits.  
 
-- Install ghp-import:
+### Q3: How can I collaborate on my resume?  
+**A**: Use GitHub’s pull request feature for easy collaboration. Share your repository link, and others can:  
+1. Fork the repo to make their own copy.  
+2. Edit the Markdown files with suggestions or improvements.  
+3. Submit a pull request for you to review and merge.  
+This process follows Etter’s focus on distributed version control, enabling efficient teamwork while keeping the project organized.
+---
 
-    `python -m pip install ghp-import`
+## Credits  
+- **Instructor** – Tristan Miller, for designing this assignment.  
+- **Teaching Assistant** – Peter Vu, for providing assistance and guidance.  
+- **Pelican** – The static site generator powering this resume-building approach.  
+- **Waterspill-en Theme** – A contribution from the Pelican Themes Community for a polished look.  
+- **Andrew Etter** – Inspiration drawn from his foundational principles in *Modern Technical Writing*.  
+- **Peer Reviewers** – Nathan Parson and Shreshth Tyagi for their valuable feedback and insights.
 
-- Generate the site for production:
-
-    `pelican content -s publishconf.py`
-
-- Import the output to the gh-pages branch:
-
-    `ghp-import output -b gh-pages`
-
-- Push to GitHub:
-
-`git push origin gh-pages`
-
-- Your site will be live at `https://yourusername.github.io/Resume-with-Pelican/`.
-
-### 9 Troubleshoot theme issues
-
-- If the theme doesn’t load, edit `publishconf.py` and set:
-
-SITEURL = "https://yourusername.github.io/Resume-with-Pelican"
-
-- Rebuild and redeploy the site (repeat step 8’s commands).
-
-## Further Resources
-
-For additional reading and to deepen your understanding, please refer to:
-
-- [Python Official Site](https://www.python.org/) – For downloading and learning about Python.
-- [Python Tutorial](https://docs.python.org/3/tutorial/index.html) – Official Python documentation.
-- [Pelican Themes on GitHub](https://github.com/getpelican/pelican-themes) – Explore different themes for Pelican.
-- [Markdown Tutorial](https://www.markdowntutorial.com/) – An interactive guide to Markdown.
-- [GitHub Pages Documentation](https://pages.github.com/) – Learn more about hosting static sites on GitHub.
-
-## FAQ
-
-**Q: Why is Markdown better than writing raw HTML for documentation?**  
-**A:** Markdown is designed for simplicity. It allows you to focus on content rather than complex syntax, making the documentation more readable and easier to maintain. This approach is consistent with Etter’s principle of clarity.
-
-**Q: I updated my Markdown resume, but the changes aren’t visible on the live website. What should I do?**  
-**A:** After modifying your Markdown files, you must regenerate the site using `make html` (or the appropriate Pelican command) and then redeploy the site using `ghp-import` and `git push`. Also, ensure to clear your browser cache or perform a hard refresh.
-
-## Credits
-
-- **Ashek A Zaman** – Author and primary contributor.
-- **Pelican** – Open-source static site generator used for this project.
-- **Waterspill-en Theme** – Theme provided by the Pelican Themes community ([Pelican Themes GitHub](https://github.com/getpelican/pelican-themes)).
-- **GitHub Pages** – Used as the hosting forge.
-- Special thanks to the contributors of Andrew Etter’s *Modern Technical Writing* for the guiding principles applied throughout this project.
